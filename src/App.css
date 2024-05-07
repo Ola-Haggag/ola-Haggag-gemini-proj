@@ -1,38 +1,219 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+ }
+.App{
+  display: flex;
   min-height: 100vh;
+}
+.sidebar{
+ height: 100vh;
+ padding: 20px 10px;
+
+ display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+ background-color: rgb(234, 239, 250) ;
+}
+.icn{
+  font-size: 22px;
+}
+.sidebar .chat{
+  font-size: 15px;
+  display:flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: rgb(193, 208, 240);
+  font-size: 17px;
+}
+
+.pchat , .plus {
+  margin: auto;
+}
+.bar{
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.recent{
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.recentData{
+  display: flex;
+  align-items: start;
+  padding: 12px;
+  gap: 10px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.recentData:hover{
+  background-color: rgb(193, 208, 240);
+}
+/*////////////////////////////////////////////////////////////////////////////*/
+.sidebottom{
+  display: flex;
+  flex-direction: column;
+}
+.bottomData{
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding-left: 10px;
+ cursor: pointer;
+ border-radius: 40px;
+}
+.bottomData:hover{
+  background-color: rgb(193, 208, 240);
+}
+.bottomData p{
+  margin-top: 12px;
+}
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* main */
+.main{
+  flex: 1;
+}
+.imageUser{
+  width: 60px;
+  height: 60px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+/*////////////////////////////////////////////////////////////////*/
+.container-main{
+ /*  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; */
+  width: 60%;
+  margin: auto;
 }
-
-.App-link {
-  color: #61dafb;
+.main .container-title{
+  margin: 50px 0px;
+  padding: 20px;
+  color: rgb(215, 215, 215);
 }
+.container-title .title{
+  font-size: 50px;
+}
+.titleHello{
+  background: -webkit-linear-gradient(#2258c3,#fdbb2d);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+}
+/*/////////////////////////////////////////////////*/
+.cards{
+/*   background-color: #3f5efb;
+ */  display: grid;
+  grid-template-columns: repeat(4,200px);
+  gap: 20px;
+  padding: 15px;
+}
+.cards .card{
+  height: 200px;
+  background-color: rgb(234, 239, 250);
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.card-icon{
+  font-size: 25px;
+  background-color: #ffffff;
+  width: 30px;
+  border-radius: 50px;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.card p{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+.card:hover{
+  background-color: rgb(193, 208, 240);
+}
+/*////////////////////////////////////////////////*/
+.container-bottom{
+  position: absolute;
+  bottom: 0px;
+  width: 60%;
+  margin: auto;
+  padding: 0px 20px;
+}
+.search-prompt{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(234, 239, 250);
+  border-radius: 40px;
+  padding: 10px;
+ 
+}
+.prompt-icon{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.search-input{
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 5px;
+  flex: 1;
+}
+.prompt-icons{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 12px;
+}
+.container-bottom p{
+  text-align: center;
+  font-size: 14px;
+  margin: 10px;
+}
+/*////////////////////////////////////////////////////////////////////*/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result{
+  padding: 10px;
+  height: 60vh;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+.result::-webkit-scrollbar{
+  display: none;
+}
+.result-title{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.result-data{
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  margin-left: 20px;
+}
+/*///////////////////////////////////*/
+.loader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+hr{
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(#2258c3,#e6f2ff);
+  background-size: 300px 50px;
+  height: 25px;
 }
